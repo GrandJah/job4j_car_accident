@@ -13,7 +13,6 @@ import ru.job4j.accident.model.Accident;
 public class AccidentMem {
   private final Map<Integer, Accident> accidents = new HashMap<>();
 
-
   public AccidentMem() {
     this.accidents.putAll(IntStream.range(0, 30).filter((i) -> 0.3 <= Math.random()).boxed()
                                    .collect(Collectors.toMap(i -> i,
