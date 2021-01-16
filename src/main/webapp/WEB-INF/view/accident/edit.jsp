@@ -34,6 +34,21 @@
                 <td class="col-8"><input id="text" type='text' name='text' value="${accident.text}">
                 </td>
             </tr>
+            <tr class="row justify-content-center">
+                <th scope="row" class="col-3"><label for="type">Тип:</label></th>
+                <td class="col-1"></td>
+                <td class="col-8">
+                    <select id="type" name="type.id">
+                        <c:forEach var="type" items="${types}">
+                            <option
+                                    <c:if test="${accident.type.id==type.id}"> selected </c:if>
+                                    value="${type.id}">
+                                    ${type.name}
+                            </option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
             <tr>
                 <td><input name="submit" type="submit" value="Сохранить"/></td>
             </tr>

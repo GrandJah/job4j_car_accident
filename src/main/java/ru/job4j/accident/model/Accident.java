@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @Builder
@@ -19,4 +18,6 @@ public class Accident {
   private String text;
 
   private String address;
+
+  private AccidentType type;
 }

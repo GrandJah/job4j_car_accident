@@ -17,10 +17,11 @@
         </tr>
         <c:forEach var="item" items="${list}" varStatus="loop">
             <tr class="row justify-content-center">
-                <th scope="row" class="col-1 text-center">${loop.index}</th>
+                <th scope="row" class="col-1 text-center">${loop.index + 1}</th>
                 <td class="col-2">${item.name}</td>
-                <td class="col-3">${item.address}</td>
-                <td class="col-5">${item.text}</td>
+                <td class="col-2">${item.address}</td>
+                <td class="col-4">${item.text}</td>
+                <td class="col-2">${item.type.name}</td>
                 <td class="col-1"><a href="<c:url value='/edit?id=${item.id}'/>">edit</a></td>
             </tr>
         </c:forEach>
