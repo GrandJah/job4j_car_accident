@@ -49,6 +49,18 @@
                     </select>
                 </td>
             </tr>
+            <tr class="row justify-content-center">
+                <th scope="row" class="col-3"><label for="rule">Статьи:</label></th>
+                <td class="col-1"></td>
+                <td class="col-8">
+                    <select id="rule" name="rIds" multiple>
+                        <c:forEach var="rule" items="${rules}">
+                            <option
+                                    <c:if test="${accident.rules.contains(rule)}">selected</c:if>
+                                    value="${rule.id}">${rule.name}</option>
+                        </c:forEach>
+                    </select>
+            </tr>
             <tr>
                 <td><input name="submit" type="submit" value="Сохранить"/></td>
             </tr>

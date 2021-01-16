@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import ru.job4j.accident.model.Accident;
 import ru.job4j.accident.service.AccidentService;
 
@@ -21,6 +23,7 @@ public class AccidentControl {
   @GetMapping("/create")
   public String create(Model model) {
     model.addAttribute("types", this.accidentService.accidentTypes());
+    model.addAttribute("rules", this.accidentService.accidentRules());
     return "accident/create";
   }
 
@@ -28,11 +31,17 @@ public class AccidentControl {
   public String edit(Model model, @RequestParam Integer id) {
     model.addAttribute("accident", this.accidentService.findAccident(id));
     model.addAttribute("types", this.accidentService.accidentTypes());
+    model.addAttribute("rules", this.accidentService.accidentRules());
     return "accident/edit";
   }
 
   @PostMapping("/save")
-  public String save(@ModelAttribute Accident accident) {
+  public String save(@ModelAttribute Accident accident,
+    @RequestParam(value = "rIds", required = false) List<Integer> ids) {
+    if (ids != null) {
+      accident
+        .setRules(ids.stream().map(this.accidentService::findRules).collect(Collectors.toSet()));
+    }
     this.accidentService.createOrUpdate(accident);
     return "redirect:/";
   }

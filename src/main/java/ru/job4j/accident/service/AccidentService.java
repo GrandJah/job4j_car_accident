@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 import ru.job4j.accident.model.Accident;
 import ru.job4j.accident.model.AccidentType;
+import ru.job4j.accident.model.Rule;
 import ru.job4j.accident.repository.AccidentMem;
 
 @Service
@@ -30,5 +31,13 @@ public class AccidentService {
 
   public List<AccidentType> accidentTypes() {
     return this.accidentRepository.getTypes();
+  }
+
+  public Rule findRules(Integer id) {
+    return this.accidentRepository.findRuleById(id);
+  }
+
+  public List<Rule> accidentRules() {
+    return this.accidentRepository.getRules();
   }
 }

@@ -16,12 +16,21 @@
             <th colspan="4"><a href="<c:url value='/create'/>">Добавить инцидент</a></th>
         </tr>
         <c:forEach var="item" items="${list}" varStatus="loop">
-            <tr class="row justify-content-center">
-                <th scope="row" class="col-1 text-center">${loop.index + 1}</th>
-                <td class="col-2">${item.name}</td>
-                <td class="col-2">${item.address}</td>
-                <td class="col-4">${item.text}</td>
-                <td class="col-2">${item.type.name}</td>
+            <tr class="row justify-content-center table-bordered">
+                <th scope="row" rowspan="2" class="col-1 text-center">${loop.index + 1}</th>
+                <td class="col-3">${item.name}</td>
+                <td class="col-4" rowspan="2">${item.address}</td>
+                <td class="col-4">${item.type.name}</td>
+            </tr>
+            <tr class="row justify-content-center table-bordered">
+                <td class="col-7">${item.text}</td>
+                <td class="col-4">
+                    <ul>
+                        <c:forEach var="rule" items="${item.rules}">
+                            <li>${rule.name}</li>
+                        </c:forEach>
+                    </ul>
+                </td>
                 <td class="col-1"><a href="<c:url value='/edit?id=${item.id}'/>">edit</a></td>
             </tr>
         </c:forEach>
