@@ -1,0 +1,17 @@
+language: java
+
+sudo: false
+
+jdk: openjdk15
+
+branches:
+  only:
+  - master
+  - development
+
+notifications:
+  email:
+    recipients:
+      - bujhtitxrf@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
