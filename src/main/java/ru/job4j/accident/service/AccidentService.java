@@ -17,4 +17,12 @@ public class AccidentService {
   public Collection<Accident> findAllAccidents() {
     return this.accidentRepository.findAll();
   }
+
+  public void createOrUpdate(Accident accident) {
+    this.accidentRepository.save(accident);
+  }
+
+  public Accident findAccident(Integer id) {
+    return this.accidentRepository.findById(id);
+  }
 }
