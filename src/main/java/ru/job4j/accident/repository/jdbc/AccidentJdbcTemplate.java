@@ -1,13 +1,13 @@
-package ru.job4j.accident.repository;
+package ru.job4j.accident.repository.jdbc;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import ru.job4j.accident.model.Accident;
+import ru.job4j.accident.repository.AccidentRepository;
 
-@Repository
+//@Repository
 public class AccidentJdbcTemplate implements AccidentRepository {
   private final JdbcTemplate jdbc;
 

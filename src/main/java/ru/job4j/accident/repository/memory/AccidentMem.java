@@ -1,10 +1,11 @@
-package ru.job4j.accident.repository;
+package ru.job4j.accident.repository.memory;
 
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import ru.job4j.accident.model.Accident;
+import ru.job4j.accident.repository.AccidentRepository;
 
 //@Repository
 public class AccidentMem implements AccidentRepository {

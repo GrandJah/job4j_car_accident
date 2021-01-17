@@ -1,14 +1,13 @@
-package ru.job4j.accident.repository;
-
-import org.springframework.stereotype.Repository;
+package ru.job4j.accident.repository.memory;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import ru.job4j.accident.model.Rule;
+import ru.job4j.accident.repository.RuleRepository;
 
-@Repository
+//@Repository
 public class RuleRepositoryMem implements RuleRepository {
   private final Map<Integer, Rule> rules = new HashMap<>();
 
