@@ -3,18 +3,24 @@ package ru.job4j.accident.service;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 import ru.job4j.accident.model.Accident;
 import ru.job4j.accident.model.AccidentType;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.AccidentMem;
+import ru.job4j.accident.repository.AccidentRepository;
+import ru.job4j.accident.repository.AccidentTypeRepository;
+import ru.job4j.accident.repository.RuleRepository;
 
 @Service
 public class AccidentService {
-  private final AccidentMem accidentRepository;
+  private final AccidentRepository accidentRepository;
+  private final AccidentTypeRepository accidentTypeRepository;
+  private final RuleRepository ruleRepository;
 
-  public AccidentService(AccidentMem accidentRepository) {
+  public AccidentService(AccidentRepository accidentRepository,
+    AccidentTypeRepository accidentTypeRepository, RuleRepository ruleRepository) {
     this.accidentRepository = accidentRepository;
+    this.accidentTypeRepository = accidentTypeRepository;
+    this.ruleRepository = ruleRepository;
   }
 
   public Collection<Accident> findAllAccidents() {
@@ -29,15 +35,15 @@ public class AccidentService {
     return this.accidentRepository.findById(id);
   }
 
-  public List<AccidentType> accidentTypes() {
-    return this.accidentRepository.getTypes();
+  public Collection<AccidentType> accidentTypes() {
+    return this.accidentTypeRepository.findAll();
   }
 
   public Rule findRules(Integer id) {
-    return this.accidentRepository.findRuleById(id);
+    return this.ruleRepository.findById(id);
   }
 
-  public List<Rule> accidentRules() {
-    return this.accidentRepository.getRules();
+  public Collection<Rule> accidentRules() {
+    return this.ruleRepository.findAll();
   }
 }
