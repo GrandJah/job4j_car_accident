@@ -12,12 +12,6 @@ import ru.job4j.accident.model.Accident;
 public class AccidentMem implements AccidentRepository {
   private final Map<Integer, Accident> accidents = new HashMap<>();
 
-  private final AccidentTypeRepository accidentTypeRepository;
-
-  public AccidentMem(AccidentTypeRepository accidentTypeRepository) {
-    this.accidentTypeRepository = accidentTypeRepository;
-  }
-
   @Override
   public Collection<Accident> findAll() {
     return this.accidents.values();
@@ -30,7 +24,6 @@ public class AccidentMem implements AccidentRepository {
       id = this.accidents.keySet().stream().max(Comparator.naturalOrder()).orElse(0) + 1;
       accident.setId(id);
     }
-    accident.setType(this.accidentTypeRepository.findById(accident.getType().getId()));
     this.accidents.put(id, accident);
     return accident;
   }

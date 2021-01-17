@@ -40,8 +40,9 @@ public class AccidentControl {
     @RequestParam(value = "rIds", required = false) List<Integer> ids) {
     if (ids != null) {
       accident
-        .setRules(ids.stream().map(this.accidentService::findRules).collect(Collectors.toSet()));
+        .setRules(ids.stream().map(this.accidentService::findRule).collect(Collectors.toSet()));
     }
+    accident.setType(this.accidentService.findType(accident.getType().getId()));
     this.accidentService.createOrUpdate(accident);
     return "redirect:/";
   }

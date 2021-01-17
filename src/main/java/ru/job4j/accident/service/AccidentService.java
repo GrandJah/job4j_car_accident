@@ -35,11 +35,15 @@ public class AccidentService {
     return this.accidentRepository.findById(id);
   }
 
+  public AccidentType findType(Integer id) {
+    return this.accidentTypeRepository.findById(id);
+  }
+
   public Collection<AccidentType> accidentTypes() {
     return this.accidentTypeRepository.findAll();
   }
 
-  public Rule findRules(Integer id) {
+  public Rule findRule(Integer id) {
     return this.ruleRepository.findById(id);
   }
 
