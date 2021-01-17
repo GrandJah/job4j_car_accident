@@ -12,6 +12,7 @@ import ru.job4j.accident.model.AccidentType;
 public class AccidentTypeRepositoryMem implements AccidentTypeRepository {
 
   private final Map<Integer, AccidentType> types = new HashMap<>();
+
   {
     types.put(1, AccidentType.of(1, "Две машины"));
     types.put(2, AccidentType.of(2, "Машина и человек"));

@@ -1,14 +1,12 @@
 package ru.job4j.accident.repository;
 
-import org.springframework.stereotype.Repository;
-
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import ru.job4j.accident.model.Accident;
 
-@Repository
+//@Repository
 public class AccidentMem implements AccidentRepository {
   private final Map<Integer, Accident> accidents = new HashMap<>();
 
