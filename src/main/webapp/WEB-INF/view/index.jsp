@@ -13,7 +13,9 @@
 <div class="row justify-content-center">
     <table class="table table-striped col-lg-6 col-md-8 col-sm-12">
         <tr class="row justify-content-center">
-            <th colspan="4"><a href="<c:url value='/logout'/>">Выйти!</a></th>
+            <th class="col-3">Login as: ${user.username}</th>
+            <th class="col-4"></th>
+            <th class="col-3 text-right"><a href="<c:url value='/logout'/>">Выйти!</a></th>
         </tr>
         <tr class="row justify-content-center">
             <th colspan="4"><a href="<c:url value='/create'/>">Добавить инцидент</a></th>
