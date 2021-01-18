@@ -13,6 +13,9 @@
 <div class="row justify-content-center">
     <table class="table table-striped col-lg-6 col-md-8 col-sm-12">
         <tr class="row justify-content-center">
+            <th colspan="4"><a href="<c:url value='/logout'/>">Выйти!</a></th>
+        </tr>
+        <tr class="row justify-content-center">
             <th colspan="4"><a href="<c:url value='/create'/>">Добавить инцидент</a></th>
         </tr>
         <c:forEach var="item" items="${list}" varStatus="loop">
