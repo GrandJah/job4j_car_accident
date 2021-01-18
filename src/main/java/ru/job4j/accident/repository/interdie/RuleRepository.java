@@ -1,4 +1,4 @@
-package ru.job4j.accident.repository;
+package ru.job4j.accident.repository.interdie;
 
 import ru.job4j.accident.model.Rule;
 

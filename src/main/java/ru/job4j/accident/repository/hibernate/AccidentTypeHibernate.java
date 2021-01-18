@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import ru.job4j.accident.model.AccidentType;
-import ru.job4j.accident.repository.AccidentTypeRepository;
+import ru.job4j.accident.repository.interdie.AccidentTypeRepository;
 
 @Repository
 public class AccidentTypeHibernate implements AccidentTypeRepository {

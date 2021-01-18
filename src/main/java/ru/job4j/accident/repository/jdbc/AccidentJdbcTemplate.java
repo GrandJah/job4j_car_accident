@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.util.Collection;
 import ru.job4j.accident.model.Accident;
-import ru.job4j.accident.repository.AccidentRepository;
+import ru.job4j.accident.repository.interdie.AccidentRepository;
 
 //@Repository
 public class AccidentJdbcTemplate implements AccidentRepository {

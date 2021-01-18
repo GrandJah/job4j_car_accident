@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.RuleRepository;
+import ru.job4j.accident.repository.interdie.RuleRepository;
 
 @Repository
 public class RuleHibernate implements RuleRepository {

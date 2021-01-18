@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import ru.job4j.accident.model.Accident;
-import ru.job4j.accident.repository.AccidentRepository;
+import ru.job4j.accident.repository.interdie.AccidentRepository;
 
 //@Repository
 public class AccidentMem implements AccidentRepository {

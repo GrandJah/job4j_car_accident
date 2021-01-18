@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import ru.job4j.accident.model.Accident;
-import ru.job4j.accident.repository.AccidentRepository;
+import ru.job4j.accident.repository.interdie.AccidentRepository;
 
 @Repository
 @Slf4j

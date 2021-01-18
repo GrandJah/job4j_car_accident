@@ -6,9 +6,9 @@ import java.util.Collection;
 import ru.job4j.accident.model.Accident;
 import ru.job4j.accident.model.AccidentType;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.AccidentRepository;
-import ru.job4j.accident.repository.AccidentTypeRepository;
-import ru.job4j.accident.repository.RuleRepository;
+import ru.job4j.accident.repository.interdie.AccidentRepository;
+import ru.job4j.accident.repository.interdie.AccidentTypeRepository;
+import ru.job4j.accident.repository.interdie.RuleRepository;
 
 @Service
 public class AccidentService {

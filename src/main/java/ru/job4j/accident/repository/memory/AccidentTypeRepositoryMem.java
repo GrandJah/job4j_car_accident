@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import ru.job4j.accident.model.AccidentType;
-import ru.job4j.accident.repository.AccidentTypeRepository;
+import ru.job4j.accident.repository.interdie.RepositoryInterface;
 
 //@Repository
-public class AccidentTypeRepositoryMem implements AccidentTypeRepository {
+public class AccidentTypeRepositoryMem implements RepositoryInterface<Integer, AccidentType> {
 
   private final Map<Integer, AccidentType> types = new HashMap<>();
 

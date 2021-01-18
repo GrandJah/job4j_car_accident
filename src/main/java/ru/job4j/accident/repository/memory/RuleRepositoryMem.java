@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.RuleRepository;
+import ru.job4j.accident.repository.interdie.RuleRepository;
 
 //@Repository
 public class RuleRepositoryMem implements RuleRepository {
