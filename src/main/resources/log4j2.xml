@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MyApp" packages="">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ddMMM-HH:mm:ss} %-5p %-50c:%-3L - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+        <Logger name="ru.job4j.accident" level="trace" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.hibernate" level="warn" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.hibernate.hql.PARSER" level="error" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.apache" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.mortbay" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="hql.parser" level="error" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="net.sf" level="error" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.jetel.graph" level="error" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.bradmcevoy" level="error" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.jboss.resteasy.plugins.server.servlet" level="error" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.hsqldb" level="warn" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="org.quartz" level="warn" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+    </Loggers>
+</Configuration>
