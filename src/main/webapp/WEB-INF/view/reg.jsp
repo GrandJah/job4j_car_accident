@@ -10,12 +10,7 @@
 </head>
 <body>
 <div class="row justify-content-center">
-    <c:if test="${not empty errorMessage}">
-        <div class="col-12 text-center" style="color:red; font-weight: bold; margin: 30px 0;">
-                ${errorMessage}
-        </div>
-    </c:if>
-    <form name='login' action="<c:url value='/login'/>" method='POST'>
+    <form name='login' action="<c:url value='/reg'/>" method='POST'>
         <table>
             <tr class="row justify-content-center">
                 <th scope="row" class="col-3"><label for="username">UserName:</label></th>
@@ -31,7 +26,7 @@
                 <td colspan='2'><input name="submit" type="submit" value="submit"/></td>
             </tr>
             <tr class="row justify-content-center ">
-                <td colspan='2' class="p-5"><a href="<c:url value='/reg'/>">Регистрация нового пользователя</a></td>
+                <td colspan='2' class="p-5"><a href="<c:url value='/login'/>">Войти</a></td>
             </tr>
         </table>
     </form>

@@ -1,13 +1,22 @@
-create table users
-(
-    username varchar(50)  not null primary key,
-    password varchar(100) not null,
-    enabled  boolean default true
-);
-
 create table authorities
 (
-    username  varchar(50) not null references users,
-    authority varchar(50) not null,
-    primary key (username, authority)
+    id        serial primary key,
+    authority varchar(50) not null
 );
+
+insert into authorities (authority)
+values ('ROLE_USER'),
+       ('ROLE_ADMIN');
+
+create table users
+(
+    id           serial primary key,
+    username     varchar(50)  not null unique,
+    password     varchar(100) not null,
+    enabled      boolean default true,
+    authority_id integer      not null references authorities
+);
+
+insert into users (username, password, authority_id)
+values ('root', '$2a$10$uamC5MD6bLedqUyTl95QAem63k09RG7BqxFGi.lDtStQ4v5HGqrvm',
+        (select id from authorities where authority = 'ROLE_ADMIN'));
